@@ -23,8 +23,8 @@
 <main class="app-content">
    <div class="app-title">
       <div>
-         <h1><i class="fa fa-bar-chart"></i> Region Activity</h1>
-         <p>Showing Top 5 DBL Region Activity</p>
+          <h1><i class="fa fa-bar-chart"></i> Branch Activity</h1>
+         <p>Showing Top 5 Branch Activity</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
          <li class="breadcrumb-item"><i class="fa fa-bar-chart fa-lg"></i>

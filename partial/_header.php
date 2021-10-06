@@ -21,6 +21,8 @@
       <!-- Main CSS-->
       <link rel="stylesheet" type="text/css" href="<?php echo prefix_dot() ?>assets/css/main.css">
       <!-- Font-icon css-->
+
+
       <link rel="stylesheet" type="text/css" href="<?php echo prefix_dot() ?>assets/font-awesome/css/font-awesome.min.css">
       <link rel="stylesheet" href="<?php echo prefix_dot() ?>assets/css/bootstrap-datepicker.css">
       <link rel="stylesheet" href="<?php echo prefix_dot() ?>assets/jstree/css/style.min.css">
@@ -107,6 +109,9 @@
 
                   <li><a class="treeview-item <?php echo curentPageActive("branch-engagin-tso-oss.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-engagin-tso-oss.php"><i class="icon fa fa-circle-o"></i> Engaging Officer in  Branch</a></li>
                   <li><a class="treeview-item <?php echo curentPageActive("branch-system-utilization.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-system-utilization.php"><i class="icon fa fa-circle-o"></i> System utilization</a></li>
+
+                   <li><a class="treeview-item" href="<?php echo prefix_dot() ?>region-target.php"><i class="icon fa fa-circle-o"></i>Region Target</a></li>
+
                   <li><a class="treeview-item" href="<?php echo prefix_dot() ?>target_report.php"><i class="icon fa fa-circle-o"></i>Target Report</a></li>
                </ul>
             </li>

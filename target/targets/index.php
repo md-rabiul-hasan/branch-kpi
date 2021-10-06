@@ -50,7 +50,7 @@
                   </thead>
                   <tbody>
                   <?php
-                    $sql = "SELECT tr.*,tl.name as target_list_name,d.name as division_name,b.branch_name as branch_name,o.OCUNAM as employee_name from targets tr left JOIN target_lists tl on tr.target_list_id = tl.id left JOIN regions d on tr.region_id = d.id left JOIN branches b on tr.branch_id = b.id left JOIN ocpf o on tr.employee_id = o.id";
+                    $sql = "SELECT tr.*,tl.name as target_list_name,d.name as division_name,b.branch_name as branch_name,bu.name as employee_name from targets tr left JOIN target_lists tl on tr.target_list_id = tl.id left JOIN regions d on tr.region_id = d.id left JOIN branches b on tr.branch_id = b.id left JOIN branch_users bu on tr.employee_id = bu.id";
                     $query = mysqli_query($conn, $sql);
                     $sl = 1;
                     while($data = mysqli_fetch_array($query)){

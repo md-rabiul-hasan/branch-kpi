@@ -123,7 +123,7 @@
                         <select class="form-control" id="employee_id" name="employee_id">
                             <option value="">Select Employee</option>
                             <?php 
-                                $sql = "SELECT id,OCUNAM as name FROM ocpf";
+                                $sql = "SELECT id,branch_id, name FROM branch_users";
                                 $query = mysqli_query($conn, $sql);
                                 while($data = mysqli_fetch_array($query)){
                                     ?>
