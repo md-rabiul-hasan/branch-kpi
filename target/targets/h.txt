@@ -1,0 +1,1 @@
+INSERT INTO `targets`(`target_list_id`, `value`, `value_type`, `target_type`, `duration`, `region_id`, `branch_id`, `employee_id`)  VALUES ('3','500','count','branch','monthly','','609','')
