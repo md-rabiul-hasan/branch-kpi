@@ -4,7 +4,6 @@ $('#compareBranchJobVolume').hide();
 ///     When Page Loaded Compleate Then called this method
 $(document).ready(function() {
     cashWithdrawFundRemitance();
-    casaOpenTermDepositOpen();
 });
 
 
@@ -15,7 +14,7 @@ function cashWithdrawFundRemitance(event) {
     $('#cashFundWithdrawRemitanceDataNotFound').hide();
 
     $.ajax({
-        url: "ajax/branch/dashboard/casa-fund-withdarawal-remitance.php",
+        url: "ajax/branch/dashboard/single-branch-casa-fund-withdarawal-remitance.php",
         method: "post",
         timeout: 3000000,
         success: function(data) {
@@ -102,7 +101,7 @@ function cashWithdrawFundRemitance(event) {
 
 
 $("#cashFundWithdrawRemitance").on('click', function(){
-    window.location.href = "http://localhost:8080/mtb/single-region-dashboard.php?region_id=1";
+    window.location.href = "http://localhost:8080/mtb/single-branch-employee.php?region_id=1";
 });
 
 

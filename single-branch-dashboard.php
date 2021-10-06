@@ -17,12 +17,12 @@
    }
    .embed-responsive {
       position: relative;
-      height: 100%;
-      display: block;
-      width: 100%;
-      padding: 0;
+      height  : 100%;
+      display : block;
+      width   : 100%;
+      padding : 0;
       overflow: hidden;
-      height: 10000px!important;
+      height  : 10000px!important;
    }
  </style>
   <link rel="stylesheet" href="assets/css/spin_loader.css">
@@ -41,7 +41,7 @@
    <div class="row">
       <div class="col-lg-6 offset-md-3 col-md-12 col-sm-12">
          <div class="tile">
-            <form action="search_single_region_branch.php" method="GET" id="system-utilization">
+            <form action="" method="GET" id="system-utilization">
                <div class="row">
                   <div class="col-md-4">
                      <div class="from-group">
@@ -85,7 +85,7 @@
       <!-- CASA Open/Term Deposit Open section start -->
       <div class="col-lg-6 offset-md-3 col-md-6">
          <div class="tile">
-            <h5 class="tile-title">CASA / Deposit / Remittance / Loan ( Branch )</h5>
+            <h5 class="tile-title">CASA / Deposit / Remittance / Loan ( Employee )</h5>
             <hr>
             <div id="casaOpenTermDepositOpenLoader">
                <div class="spinner">
@@ -97,7 +97,7 @@
                </div>
             </div>
             <div class="embed-responsive embed-responsive-16by9" id="casaOpenTermDepositOpenData">
-               <canvas class="embed-responsive-item" id="casaOpenTermDepositOpen" style="height: 800px; display: block; width: 529px;"></canvas>
+               <canvas class="embed-responsive-item" id="casaOpenTermDepositOpen" style="height: 350px; display: block; width: 529px;"></canvas>
             </div>
             <div class=" text-uppercase" id="casaOpenTermDepositOpenDataNotFound"></div>
          </div>
@@ -113,7 +113,7 @@
       <script type="text/javascript" src="assets/js/plugins/validation.js"></script>
       <script type="text/javascript" src="assets/js/plugins/bootstrap-datepicker.min.js"></script>
       <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script>
-      <script type="text/javascript" src="assets/js/branch/single-region-job-volume.js"></script>
+      <script type="text/javascript" src="assets/js/branch/single-branch-job-volume.js"></script>
       <script>
         $('.datepicker').datepicker({
          format: "yyyy-mm",

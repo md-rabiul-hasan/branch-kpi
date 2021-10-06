@@ -7,16 +7,6 @@
     exit;
   }
 
-  if($_SESSION['role'] == "region"){
-   header("location:region_dashboard.php");
-   exit;
-  }
-
-   if($_SESSION['role'] == "branch_manager"){
-      header("location:branch_manager_dashboard.php");
-      exit;
-   }
-
   include 'partial/_header.php';
  ?>
  <style>
@@ -143,23 +133,7 @@
       <!-- Cash Deposit/Withdrawal, Fund Transfer, Remittance section end -->
       <!-- CASA Open/Term Deposit Open section start -->
       <div class="col-lg-5 col-md-6">
-         <div class="tile">
-            <h5 class="tile-title">CASA / Deposit / Remittance / Loan ( Branch )</h5>
-            <hr>
-            <div id="casaOpenTermDepositOpenLoader">
-               <div class="spinner">
-                  <div class="rect1"></div>
-                  <div class="rect2"></div>
-                  <div class="rect3"></div>
-                  <div class="rect4"></div>
-                  <div class="rect5"></div>
-               </div>
-            </div>
-            <div class="embed-responsive embed-responsive-16by9" id="casaOpenTermDepositOpenData">
-               <canvas class="embed-responsive-item" id="casaOpenTermDepositOpen" width="400px;"></canvas>
-            </div>
-            <div class=" text-uppercase" id="casaOpenTermDepositOpenDataNotFound"></div>
-         </div>
+         <div id="chartContainer2" style="height: 370px;"></div>
       </div>
       <!-- CASA Open/Term Deposit Open section end -->
      
@@ -235,15 +209,9 @@
 
 
 
-      <div class="col-lg-5 offset-md-1 col-md-6">
-         <div id="chartContainer1" style="height: 300px"></div>
-      </div>
 
 
-
-      <div class="col-lg-5 col-md-6">
-         <div id="chartContainer2" style="height: 300px;"></div>
-      </div>
+    
 
    
    </div> 
@@ -263,7 +231,7 @@
       <script type="text/javascript" src="assets/js/plugins/validation.js"></script>
       <script type="text/javascript" src="assets/js/plugins/bootstrap-datepicker.min.js"></script>
       <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script>
-      <script type="text/javascript" src="assets/js/branch/dashboard-job-volume.js"></script>
+      <script type="text/javascript" src="assets/js/branch/region-dashboard-job-volume.js"></script>
       <script>
         $('.datepicker').datepicker({
          format: "yyyy-mm",
@@ -276,31 +244,11 @@
       <script>
 window.onload = function() {
 
-var chart = new CanvasJS.Chart("chartContainer1", {
-   animationEnabled: true,
-   title: {
-      text: "Region Overall Progress"
-   },
-   data: [{
-      type: "pie",
-      startAngle: 240,
-      yValueFormatString: "##0.00\"%\"",
-      indexLabel: "{label} {y}",
-      dataPoints: [
-         {y: 40, label: "Region-1"},
-         {y: 15, label: "Region-2"},
-         {y: 30, label: "Region-3"},
-         {y: 10, label: "Region-4"},
-         {y: 5, label: "Region-5"}
-      ]
-   }]
-});
-chart.render();
 
 var h = new CanvasJS.Chart("chartContainer2", {
    animationEnabled: true,
    title: {
-      text: "Top 5 Branch Progress"
+      text: "Top 5 Branch"
    },
    data: [{
       type: "pie",
@@ -308,11 +256,11 @@ var h = new CanvasJS.Chart("chartContainer2", {
       yValueFormatString: "##0.00\"%\"",
       indexLabel: "{label} {y}",
       dataPoints: [
-         {y: 20, label: "Naya Paltan"},
-         {y: 10, label: "Banani"},
-         {y: 40, label: "Bashundhara"},
-         {y: 20, label: "Ashulia"},
-         {y: 10, label: "Cumilla"}
+         {y: 20, label: "Naya Paltan Branch"},
+         {y: 10, label: "Alankar More Branch"},
+         {y: 40, label: "Dhamrai SME Krishi Branch"},
+         {y: 20, label: "Shibu Market Branch"},
+         {y: 10, label: "Rangamati Branch"}
       ]
    }]
 });

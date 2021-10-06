@@ -35,7 +35,7 @@
           $target_engaing = $data['employee_name'];
       }
 
-      $archive = $value - rand(10,30);
+      $archive = $data['achive_value'];
 
       $percentage = get_percentage($value, $archive);
 

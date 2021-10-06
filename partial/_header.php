@@ -89,11 +89,24 @@
                <p class="app-sidebar__user-designation"><?php  echo $_SESSION['email'] ?></p>
             </div>
          </div>
+         
+         <?php if($_SESSION['role'] == "cbo") : ?>
          <ul class="app-menu">
             <?php $pageName = basename($_SERVER['PHP_SELF']); ?>
             <li><a class="app-menu__item <?php if($pageName =='index.php'){echo 'active';}?>" href="<?php echo prefix_dot() ?>index.php"><i class="app-menu__icon fa fa-bar-chart"></i><span class="app-menu__label">Dashboard</span></a></li>
             <li class="treeview <?php if($pageName == 'brach-activaty.php' || $pageName == 'branch-average-activaty.php' ||  $pageName == 'branch-job-volume.php' || $pageName == 'branch-command-execution-time.php' || $pageName == 'branch-engagin-tso-oss.php' || $pageName == 'branch-system-utilization.php'){ echo 'is-expanded';  }else{  echo '';  } ?>">
                <a class="<?php if($pageName == 'brach-activaty.php' || $pageName == 'branch-average-activaty.php' ||  $pageName == 'branch-job-volume.php' || $pageName == 'branch-command-execution-time.php' || $pageName == 'branch-engagin-tso-oss.php' || $pageName == 'branch-system-utilization.php'){ echo 'active';  }else{  echo '';  } ?>  app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon  fa fa-university"></i><span class="app-menu__label">Region Performance</span><i class="treeview-indicator fa fa-angle-right"></i>
+               </a>
+               <ul class="treeview-menu">
+                  <li><a class="treeview-item <?php echo curentPageActive("region_activity.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>region_activity.php"><i class="icon fa fa-circle-o"></i>Region Activity</a></li>
+                 
+                  <li><a class="treeview-item <?php echo curentPageActive("branch-command-execution-time.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-command-execution-time.php"><i class="icon fa fa-circle-o"></i> Performance Summary</a></li>
+
+                <li><a class="treeview-item" href="<?php echo prefix_dot() ?>target_report.php"><i class="icon fa fa-circle-o"></i>Target Report</a></li>
+               </ul>
+            </li>
+            <li class="treeview">
+               <a class="<?php if($pageName == 'brach-activaty.php' || $pageName == 'branch-average-activaty.php' ||  $pageName == 'branch-job-volume.php' || $pageName == 'branch-command-execution-time.php' || $pageName == 'branch-engagin-tso-oss.php' || $pageName == 'branch-system-utilization.php'){ echo 'active';  }else{  echo '';  } ?>  app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon  fa fa-university"></i><span class="app-menu__label">Performance </span><i class="treeview-indicator fa fa-angle-right"></i>
                </a>
                <ul class="treeview-menu">
                   <li><a class="treeview-item <?php echo curentPageActive("region_activity.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>region_activity.php"><i class="icon fa fa-circle-o"></i>Region Activity</a></li>
@@ -143,9 +156,101 @@
                </ul>
                </li>
             <?php endif; ?>
+         </ul>    
+      <?php endif; ?>
+
+         <?php if($_SESSION['role'] == "region") : ?>
+
+            <ul class="app-menu">
+               <?php $pageName = basename($_SERVER['PHP_SELF']); ?>
+               <li><a class="app-menu__item <?php if($pageName =='index.php'){echo 'active';}?>" href="<?php echo prefix_dot() ?>index.php"><i class="app-menu__icon fa fa-bar-chart"></i><span class="app-menu__label">Dashboard</span></a></li>
+            
+               <li class="treeview ">
+               <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon  fa fa-university"></i><span class="app-menu__label">Branch Performance</span><i class="treeview-indicator fa fa-angle-right"></i>
+               </a>
+               <ul class="treeview-menu">
+                  <li><a class="treeview-item " href="<?php echo prefix_dot() ?>single-region-dashboard.php?region_id=1"><i class="icon fa fa-circle-o"></i>Branch Activity</a></li>
+                  <li><a class="treeview-item " href="<?php echo prefix_dot() ?>region-to-branch.php"><i class="icon fa fa-circle-o"></i>Branch Performance</a></li>
+                  
+                  <li><a class="treeview-item" href="<?php echo prefix_dot() ?>region-branch-command-execution-time-search.php"><i class="icon fa fa-circle-o"></i>Branch Details</a></li>
+
+                 <li><a class="treeview-item" href="<?php echo prefix_dot() ?>target_report.php"><i class="icon fa fa-circle-o"></i>Target Report</a></li>
+               </ul>
+            </li>
+
+            <li class="treeview ">
+               <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon  fa fa-university"></i><span class="app-menu__label">Performance</span><i class="treeview-indicator fa fa-angle-right"></i>
+               </a>
+               <ul class="treeview-menu">
+                  
+                  <li><a class="treeview-item" href="<?php echo prefix_dot() ?>branch-job-volume.php"><i class="icon fa fa-circle-o"></i> Job Volume </a></li>
+  
+                  <li><a class="treeview-item <?php echo curentPageActive("branch-engagin-tso-oss.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-engagin-tso-oss.php"><i class="icon fa fa-circle-o"></i> Engaging Officer in  Branch</a></li>
+                  <li><a class="treeview-item <?php echo curentPageActive("branch-system-utilization.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-system-utilization.php"><i class="icon fa fa-circle-o"></i> System utilization</a></li>
+               </ul>
+            </li>
+
+               <li class="treeview <?php if($pageName == 'indivisual-tso-wise-performance.php' || $pageName == 'individual-contribution-oss.php' ||  $pageName == 'individual-system-utilization.php' || $pageName == 'individual-performance.php'){ echo 'is-expanded';  }else{  echo '';  } ?>">
+                  <a class="app-menu__item <?php if($pageName == 'indivisual-tso-wise-performance.php' || $pageName == 'individual-contribution-oss.php' ||  $pageName == 'individual-system-utilization.php' || $pageName == 'individual-performance.php'){ echo 'active';  }else{  echo '';  } ?> " href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-line-chart"></i><span class="app-menu__label">Individual Performance</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                  <ul class="treeview-menu">
+                     <li><a class="treeview-item <?php echo curentPageActive("indivisual-tso-wise-performance.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>indivisual-tso-wise-performance.php"><i class="icon fa fa-circle-o"></i>Officer-wise performance for a single branch</a></li>
+                     <li><a class="treeview-item <?php echo curentPageActive("individual-contribution-oss.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>individual-contribution-oss.php"><i class="icon fa fa-circle-o"></i> Individual contribution to Branch</a></li>
+                     <li style="display: none;"><a class="treeview-item <?php echo curentPageActive("brach-activaty.php") == true ? 'active' : '';  ?>" href="#"><i class="icon fa fa-circle-o"></i> Engaging TSOs in OSS </a></li>
+                     <li><a class="treeview-item <?php echo curentPageActive("individual-system-utilization.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>individual-system-utilization.php"><i class="icon fa fa-circle-o"></i> System utilization of Individuals</a></li>
+                     <li><a class="treeview-item <?php echo curentPageActive("individual-performance.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>individual-performance.php"><i class="icon fa fa-circle-o"></i> Individual performance </a></li>
+                  </ul>
+               </li>
 
 
-         </ul>
+            </ul>
+         <?php endif; ?>
+
+
+         <?php if($_SESSION['role'] == "branch_manager") : ?>
+
+<ul class="app-menu">
+   <?php $pageName = basename($_SERVER['PHP_SELF']); ?>
+   <li><a class="app-menu__item <?php if($pageName =='index.php'){echo 'active';}?>" href="<?php echo prefix_dot() ?>index.php"><i class="app-menu__icon fa fa-bar-chart"></i><span class="app-menu__label">Dashboard</span></a></li>
+
+   <li class="treeview ">
+   <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon  fa fa-university"></i><span class="app-menu__label">Branch Performance</span><i class="treeview-indicator fa fa-angle-right"></i>
+   </a>
+   <ul class="treeview-menu">
+      <li><a class="treeview-item " href="<?php echo prefix_dot() ?>single-branch-dashboard.php?region_id=1"><i class="icon fa fa-circle-o"></i>Employee Activity</a></li>
+      
+      <li><a class="treeview-item" href="<?php echo prefix_dot() ?>branch-emp-data.php"><i class="icon fa fa-circle-o"></i>Employee Details</a></li>
+
+     <li><a class="treeview-item" href="<?php echo prefix_dot() ?>target_report.php"><i class="icon fa fa-circle-o"></i>Target Report</a></li>
+   </ul>
+</li>
+
+<li class="treeview ">
+   <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon  fa fa-university"></i><span class="app-menu__label">Performance</span><i class="treeview-indicator fa fa-angle-right"></i>
+   </a>
+   <ul class="treeview-menu">
+      
+      <li><a class="treeview-item" href="<?php echo prefix_dot() ?>branch-job-volume.php"><i class="icon fa fa-circle-o"></i> Job Volume </a></li>
+
+      <li><a class="treeview-item <?php echo curentPageActive("branch-engagin-tso-oss.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-engagin-tso-oss.php"><i class="icon fa fa-circle-o"></i> Engaging Officer in  Branch</a></li>
+      <li><a class="treeview-item <?php echo curentPageActive("branch-system-utilization.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-system-utilization.php"><i class="icon fa fa-circle-o"></i> System utilization</a></li>
+   </ul>
+</li>
+
+   <li class="treeview <?php if($pageName == 'indivisual-tso-wise-performance.php' || $pageName == 'individual-contribution-oss.php' ||  $pageName == 'individual-system-utilization.php' || $pageName == 'individual-performance.php'){ echo 'is-expanded';  }else{  echo '';  } ?>">
+      <a class="app-menu__item <?php if($pageName == 'indivisual-tso-wise-performance.php' || $pageName == 'individual-contribution-oss.php' ||  $pageName == 'individual-system-utilization.php' || $pageName == 'individual-performance.php'){ echo 'active';  }else{  echo '';  } ?> " href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-line-chart"></i><span class="app-menu__label">Individual Performance</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+      <ul class="treeview-menu">
+         <li><a class="treeview-item <?php echo curentPageActive("indivisual-tso-wise-performance.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>indivisual-tso-wise-performance.php"><i class="icon fa fa-circle-o"></i>Officer-wise performance for a single branch</a></li>
+         <li><a class="treeview-item <?php echo curentPageActive("individual-contribution-oss.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>individual-contribution-oss.php"><i class="icon fa fa-circle-o"></i> Individual contribution to Branch</a></li>
+         <li style="display: none;"><a class="treeview-item <?php echo curentPageActive("brach-activaty.php") == true ? 'active' : '';  ?>" href="#"><i class="icon fa fa-circle-o"></i> Engaging TSOs in OSS </a></li>
+         <li><a class="treeview-item <?php echo curentPageActive("individual-system-utilization.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>individual-system-utilization.php"><i class="icon fa fa-circle-o"></i> System utilization of Individuals</a></li>
+         <li><a class="treeview-item <?php echo curentPageActive("individual-performance.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>individual-performance.php"><i class="icon fa fa-circle-o"></i> Individual performance </a></li>
+      </ul>
+   </li>
+
+
+</ul>
+<?php endif; ?>
+
       </aside>
       <div id="preloader" class="preloader">
          <div class="pre-wrap">

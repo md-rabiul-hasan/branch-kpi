@@ -35,8 +35,6 @@
           <th scope="col" colspan="2">Deposit</th>
           <th scope="col" colspan="2">Remittance</th>
           <th scope="col" colspan="2">Loan</th>
-           <td>Action</td>   
-          
          
         </tr>
 
@@ -56,8 +54,7 @@
            
           <td>Count</td>
              <td>Amount (TK)</td>  
-
-            <td>--</td>        	
+      	
         </tr>
 
     </thead>
@@ -65,18 +62,16 @@
 
         <?php 
 
-            $sql="SELECT br.id, br.branch_code, br.branch_name FROM `branches` br left join regions reg on br.region_id=reg.id";
+            $sql="SELECT * FROM `branch_users`";
 
             $query = mysqli_query($conn, $sql);
-
-            
 
             while($fetch=mysqli_fetch_array($query)){
 
           ?>
 
         <tr class="text-center">
-          <td class="text-left"><?php echo $fetch['branch_name']; ?></td>
+          <td class="text-left"><?php echo $fetch['name']; ?></td>
           
           <td><?php echo(rand(10,500)); ?></td>
           <td><?php echo number_format(rand(111111,999999), 2); ?></td>
@@ -90,9 +85,6 @@
           <td><?php echo(rand(10,100)); ?></td>
           <td><?php echo number_format(rand(111111,999999), 2); ?></td>
 
-          <td><a href="<?php echo "branch-emp-data.php"; ?>" class="btn btn-info btn-sm" target="_blank"> <i class="fa fa-info-circle"></i></a></td>
-
-          
 
         </tr>
 

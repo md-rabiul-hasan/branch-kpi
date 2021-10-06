@@ -12,32 +12,32 @@
 	header('Content-Type: application/json');
 	$data = array(
 		array(
-			"branch_name"   => "Naya Paltan",
-			"cash_deposite" => 400150,
+			"branch_name"   => "Gulshan",
+			"cash_deposite" => 800150,
 			"withdrawal"    => 500150,
 			"fundtransfer"  => 701500,
-			"remitance"     => 200150
+			"remitance"     => 500150
 		),
 		array(
 			"branch_name"   => "Banani",
 			"cash_deposite" => 567323,
-			"withdrawal"    => 123444,
+			"withdrawal"    => 623444,
 			"fundtransfer"  => 442000,
-			"remitance"     => 523300
+			"remitance"     => 823300
 		),
 		array(
 			"branch_name"   => "Bashundhara",
-			"cash_deposite" => 400150,
-			"withdrawal"    => 800220,
+			"cash_deposite" => 600150,
+			"withdrawal"    => 700220,
 			"fundtransfer"  => 600150,
-			"remitance"     => 700111
+			"remitance"     => 400111
 		),
 		array(
 			"branch_name"   => "Ashulia",
 			"cash_deposite" => 300150,
 			"withdrawal"    => 500220,
 			"fundtransfer"  => 600150,
-			"remitance"     => 900111
+			"remitance"     => 500111
 		),
 		array(
 			"branch_name"   => "Cumilla",

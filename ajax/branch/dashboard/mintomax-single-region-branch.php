@@ -13,7 +13,7 @@
 	header('Content-Type: application/json');
 
   function sortByOrder($a, $b) {
-      return $b['total'] - $a['total'];
+      return $a['total'] - $b['total'];
   }
 
     $data = [];

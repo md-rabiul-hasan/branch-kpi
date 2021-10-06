@@ -62,7 +62,7 @@
                         <select name="sorting" id="" class="form-control" >
                            <option value="">Select Option</option>
                            <option value="maxtomin">Maximum-Minimum</option>
-                           <option value="mintomax">Minimum-Maximum</option>
+                           <option value="mintomax" <?php if(isset($_GET['sorting']) && $_GET['sorting'] == "mintomax"){ echo "selected"; } ?>>Minimum-Maximum</option>
                         </select>
                        
                      </div>
@@ -113,7 +113,7 @@
       <script type="text/javascript" src="assets/js/plugins/validation.js"></script>
       <script type="text/javascript" src="assets/js/plugins/bootstrap-datepicker.min.js"></script>
       <script type="text/javascript" src="assets/js/plugins/Chart.min.js"></script>
-      <script type="text/javascript" src="assets/js/branch/single-region-job-volume.js"></script>
+      <script type="text/javascript" src="assets/js/branch/mintomax-single-region-job-volume.js"></script>
       <script>
         $('.datepicker').datepicker({
          format: "yyyy-mm",
