@@ -40,7 +40,8 @@
    <div class="row">
       <div class="offset-md-1 col-lg-10 col-md-12 col-sm-12">
          <div class="tile">
-            <form action="search-region-activity.php" method="get">
+
+            <form action="search-region-activity-branch.php" method="get">
                <div class="row">
                   <div class="col-md-4">
                      <div class="from-group">
@@ -58,6 +59,26 @@
                   </div>
                </div>
             </form>
+            
+         </div>
+
+      </div>
+   </div>
+
+
+    <!-- Show Month Name and Year -->
+   <div class="row">
+      <div class="offset-md-1 col-lg-10 col-md-12 col-sm-12">
+         <div class="tile">
+                  <?php 
+
+                  if ($_GET['select_month']) {
+                     $select_month = $_GET['select_month'];
+                  }
+                    
+
+                  ?>
+                  <h4 class="text-center" style="text-transform: uppercase;"><?php echo date('F, Y',strtotime($select_month));  ?>  Region Performance</h4>
          </div>
       </div>
    </div>
@@ -167,7 +188,7 @@ var chart = new CanvasJS.Chart("chartContainer1", {
    animationEnabled: true,
    colorSet: "greenShades",
    title: {
-      text: "Region-1 "
+      text: "Banani Branch "
    },
    data: [{
       type: "pie",
@@ -191,7 +212,7 @@ var region2 = new CanvasJS.Chart("chartContainer2", {
    
 
    title: {
-       text: "Region-2 "
+       text: "Gulshan Branch "
    },
    data: [{
       type: "pie",
@@ -216,7 +237,7 @@ var region3 = new CanvasJS.Chart("chartContainer3", {
    
 
    title: {
-       text: "Region-3 "
+       text: "Shahjahanpur Branch "
    },
    data: [{
       type: "pie",
@@ -241,7 +262,7 @@ var region4 = new CanvasJS.Chart("chartContainer4", {
    
 
    title: {
-       text: "Region-4 "
+       text: "Cumilla Branch "
    },
    data: [{
       type: "pie",
@@ -266,7 +287,7 @@ var region5 = new CanvasJS.Chart("chartContainer5", {
    
 
    title: {
-       text: "Region-5 "
+       text: "Feni Branch "
    },
    data: [{
       type: "pie",
@@ -274,10 +295,10 @@ var region5 = new CanvasJS.Chart("chartContainer5", {
       yValueFormatString: "##0.00\"TK\"",
       indexLabel: "{label} {y}",
       dataPoints: [
-         {y: 1176543, label: "CASA"},
+         {y: 11765423, label: "CASA"},
          {y: 6548234, label: "Deposit"},
-         {y: 5434545, label: "Remmittance"},
-         {y: 2004000, label: "Loan"},
+         {y: 5434532, label: "Remmittance"},
+         {y: 2003000, label: "Loan"},
       
       ]
    }]

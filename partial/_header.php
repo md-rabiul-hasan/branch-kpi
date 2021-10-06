@@ -108,7 +108,6 @@
                   <li><a class="treeview-item <?php echo curentPageActive("branch-engagin-tso-oss.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-engagin-tso-oss.php"><i class="icon fa fa-circle-o"></i> Engaging Officer in  Branch</a></li>
                   <li><a class="treeview-item <?php echo curentPageActive("branch-system-utilization.php") == true ? 'active' : '';  ?>" href="<?php echo prefix_dot() ?>branch-system-utilization.php"><i class="icon fa fa-circle-o"></i> System utilization</a></li>
                   <li><a class="treeview-item" href="<?php echo prefix_dot() ?>target_report.php"><i class="icon fa fa-circle-o"></i>Target Report</a></li>
-                  <li><a class="treeview-item" href="<?php echo prefix_dot() ?>region_target.php"><i class="icon fa fa-circle-o"></i>Region Target Report</a></li>
                </ul>
             </li>
             <li class="treeview <?php if($pageName == 'indivisual-tso-wise-performance.php' || $pageName == 'individual-contribution-oss.php' ||  $pageName == 'individual-system-utilization.php' || $pageName == 'individual-performance.php'){ echo 'is-expanded';  }else{  echo '';  } ?>">

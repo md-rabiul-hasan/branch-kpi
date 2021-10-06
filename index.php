@@ -220,19 +220,23 @@
    <!--    Compare Data Show Section -->
    </div>
 
-   <div class="row">
+   
+      <div class="row">
 
-      <div class="col-md-5 offset-md-1">
-         <div id="chartContainer1" style="height: 300px;width: 400px;"></div>
+
+
+      <div class="col-lg-5 offset-md-1 col-md-6">
+         <div id="chartContainer1" style="height: 300px"></div>
       </div>
 
 
 
-      <div class="col-md-6">
-         <div id="chartContainer2" style="height: 300px;width: 400px;"></div>
+      <div class="col-lg-5 col-md-6">
+         <div id="chartContainer2" style="height: 300px;"></div>
       </div>
 
-   </div>
+   
+   </div> 
 
 
    <br><br>

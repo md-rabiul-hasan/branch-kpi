@@ -44,7 +44,7 @@
           $target_engaing = $data['employee_name'];
       }
 
-      $archive = $data['achive_value'];
+      $archive = $value - rand(10,30);
 $percentage = get_percentage($value, $archive);
       $output .= "<tr class='text-center'>
       <td class='text-left'>$target_list_name</td>

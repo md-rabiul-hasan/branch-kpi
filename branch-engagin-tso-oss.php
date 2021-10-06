@@ -28,69 +28,23 @@
           <div class="tile">
                <form action="" id="branch-compare-engagin-tso-oss">
                  <div class="row">
-                  <div class="col-md-2">
-                    <div class="from-group">
-                      <label class="control-label font-weight-bold">Select Date</label>
-                      <input type="text" class="form-control datepicker" autocomplete="off" required="required" name="select_month" placeholder="Select Month" id="select_month">
+
+                    <div class="col-md-4">
+                      <div class="from-group">
+                        <label class="control-label font-weight-bold">Select Date</label>
+                        <input type="text" class="form-control datepicker" autocomplete="off" required="required" name="select_month" placeholder="Select Month" id="select_month">
+                      </div>
                     </div>
-                  </div>
-                   <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="control-label font-weight-bold">Select Frist Branch</label>
-                      <select name="first_branch" id="first_branch"  required="required" class="form-control">
-                        <option value="">Select First Branch</option>
-                        <?php 
-                          $sqlQuery = "SELECT branch_name,short_name FROM branches ORDER BY branch_name ASC";
-                          $result = mysqli_query($conn,$sqlQuery);
-                          while($row = mysqli_fetch_array($result)){
-                            ?>
-                              <option value="<?php echo $row['short_name'] ?>"><?php echo $row['branch_name']; ?></option>
-                            <?php
-                          }
-                         ?>
-                      </select>
-                    </div>
-                   </div>
-                   <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="control-label font-weight-bold">Select Second Branch</label>
-                      <select class="form-control" id="second_branch" required="required" name="second_branch">
-                        <option value="">Select Second Branch</option>
-                        <?php 
-                          $sqlQuery = "SELECT branch_name,short_name FROM branches ORDER BY branch_name ASC";
-                          $result = mysqli_query($conn,$sqlQuery);
-                          while($row = mysqli_fetch_array($result)){
-                            ?>
-                              <option value="<?php echo $row['short_name'] ?>"><?php echo $row['branch_name']; ?></option>
-                            <?php
-                          }
-                         ?>
-                      </select>
-                    </div>
-                   </div>
-                   <div class="col-md-2">
-                    <div class="form-group">
-                      <label class="control-label font-weight-bold">Select Third Branch</label>
-                       <select class="form-control" id="third_branch" name="third_branch">
-                        <option value="">Select Third Branch</option>
-                         <?php 
-                          $sqlQuery = "SELECT branch_name,short_name FROM branches ORDER BY branch_name ASC";
-                          $result = mysqli_query($conn,$sqlQuery);
-                          while($row = mysqli_fetch_array($result)){
-                            ?>
-                              <option value="<?php echo $row['short_name'] ?>"><?php echo $row['branch_name']; ?></option>
-                            <?php
-                          }
-                         ?>
-                      </select>
-                    </div>
-                   </div>
-                   <div class="col-md-2">
-                    <div class="form-group">
-                      <p></p>
-                      <input type="submit" name="compare" id="compare" class="btn btn-primary btn-block mt-4" value="compare">
-                    </div>
-                   </div>
+                     
+
+                     <div class="col-md-2">
+                      <div class="form-group">
+                        <p></p>
+                        <input type="submit" name="compare" id="compare" class="btn btn-primary btn-block mt-4" value="Search">
+                      </div>
+                     </div>
+
+
                  </div>
                </form>
           </div>
